@@ -1,4 +1,4 @@
-//importer express
+//importer le framework express
 const express = require("express");
 //créer l'application express
 const app = express();
@@ -8,11 +8,11 @@ const mongoose = require("./db/dbase.js");
 
 //appel des middlewares
 // importation morgan pour logger les requêtes http
-// const logger = require("morgan");
+const logger = require("morgan");
 // importation body parser pour transormer le corps de la req et res d'une chaine de caractère au format json
 const bodyParser = require("body-parser");
 
-// importation du router user
+// importation des routes user
 const userRoutes = require("./routes/user");
 
 //importation des routes sauces
@@ -20,7 +20,7 @@ const saucesRoutes = require("./routes/sauces");
 
 // utiliser les middlewares pour les requêtes et les réponses
 // morgan
-// app.use(logger("dev")) //paramètre par défaut(couleur selon réponse); next intégré
+app.use(logger("dev")); //paramètre par défaut(couleur selon réponse); next intégré
 
 app.use(bodyParser.json()) //transormer la chaine de caractère au format json (req et resp)
     //midelware pour ajouter des headers à notre objet response pour  autoriser les appels HTTP entre des serveurs différents (CORS)

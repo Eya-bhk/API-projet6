@@ -14,5 +14,3 @@ mongoose
 //exportation de mongoose pour qu'il puisse être utilisé à partir d'autres fichiers
 
 module.exports = mongoose;
-
-//mongodb+srv://first-cluster:<password>@cluster0.rukylma.mongodb.net/?retryWrites=true&w=majority
